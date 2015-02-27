@@ -27,7 +27,7 @@ It generates a txt-file with a list of url's all wp-cron.php files in a WordPres
 
 = How do I use the file created in a cronjob? =
 
-See this [Gist](https://github.com/nnnnn) for an example of how to use the file created by this plugin to ping all wp-cron.php files in a network.
+See this [Gist](https://gist.github.com/alfreddatakillen/33642669507bb3eeab5f) for an example of how to use the file created by this plugin to ping all wp-cron.php files in a network.
 
 = Does it work on a non-multisite installation? =
 
