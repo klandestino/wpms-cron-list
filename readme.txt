@@ -11,7 +11,7 @@ Creates a list of url's to all wp-cron files in a WPMS installation. Useful if y
 
 == Description ==
 
-There are some [inherent problems to the way wp-cron works.](https://tommcfarlin.com/wordpress-cron-jobs/) Sometimes you want to disable it and run your own (real) cron instead. This is usually quite simple, just disable wp-cron and set up a job that pings your sites wp-cron.php file on a regular interval. The problem comes when you have a multisite installation and need to ping alot of different sites wp-cron.php file. This plugin helps with that problem by creating a file with a comma-separated list of url's to all wp-cron.php files in a WordPress multisite installation.
+There are some [inherent problems to the way wp-cron works.](https://tommcfarlin.com/wordpress-cron-jobs/) Sometimes you want to disable it and run your own (real) cron instead. This is usually quite simple, just disable wp-cron and set up a job that pings your sites wp-cron.php file on a regular interval. The problem comes when you have a multisite installation and need to ping alot of different sites wp-cron.php file. This plugin helps with that problem by creating a file with a list of url's to all wp-cron.php files in a WordPress multisite installation.
 
 == Installation ==
 
@@ -23,7 +23,7 @@ There are some [inherent problems to the way wp-cron works.](https://tommcfarlin
 
 = What does the plugin do? =
 
-It generates a txt-file with a comma-separated list of url's all wp-cron.php files in a WordPress multisite installation. The file will be found at: mydomain.com/wp-content/uploads/wpms_cron_list.txt
+It generates a txt-file with a list of url's all wp-cron.php files in a WordPress multisite installation. The file will be found at: mydomain.com/wp-content/uploads/wpms_cron_list.txt
 
 = How do I use the file created in a cronjob? =
 

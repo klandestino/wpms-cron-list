@@ -40,7 +40,7 @@ register_deactivation_hook( __FILE__, 'deactivate_wpms_cron_list' );
 add_action( 'refresh_blog_details', 'wpms_cron_list_create_list_file' );
 
 /**
- * Create a comma-separated list of all wp-cron url's in the MS-installation
+ * Create a list of all wp-cron url's in the MS-installation
  * Put list in file found at mydomain.com/wp-content/uploads/wpms_cron_list.txt
  */
 function wpms_cron_list_create_list_file() {
@@ -56,5 +56,5 @@ function wpms_cron_list_create_list_file() {
 		$urls[] .=  get_blog_details( $site['blog_id'] )->siteurl . '/wp-cron.php';
 	}
 
-	file_put_contents( wpms_cron_list_get_file_path(), implode( ',', $urls ) );
+	file_put_contents( wpms_cron_list_get_file_path(), implode( "\n", $urls ) );
 }
