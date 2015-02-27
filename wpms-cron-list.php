@@ -44,17 +44,19 @@ add_action( 'refresh_blog_details', 'wpms_cron_list_create_list_file' );
  * Put list in file found at mydomain.com/wp-content/uploads/wpms_cron_list.txt
  */
 function wpms_cron_list_create_list_file() {
-	$sites = wp_get_sites( array(
-		'public' => 1,
-		'spam'       => 0,
-		'deleted'    => 0,
-		'archived' => 0,
-		'limit' => 9999 //max number of sites where wp_is_large_network still === false
-	) );
+	if ( function_exists( 'wp_get_sites' ) ) :
+		$sites = wp_get_sites( array(
+			'public' => 1,
+			'spam'       => 0,
+			'deleted'    => 0,
+			'archived' => 0,
+			'limit' => 9999 //max number of sites where wp_is_large_network still === false
+		) );
 
-	foreach ( $sites as $site ) {
-		$urls[] .=  get_blog_details( $site['blog_id'] )->siteurl . '/wp-cron.php';
-	}
+		foreach ( $sites as $site ) {
+			$urls[] .=  get_blog_details( $site['blog_id'] )->siteurl . '/wp-cron.php';
+		}
 
-	file_put_contents( wpms_cron_list_get_file_path(), implode( "\n", $urls ) );
+		file_put_contents( wpms_cron_list_get_file_path(), implode( "\n", $urls ) );
+	endif;
 }
